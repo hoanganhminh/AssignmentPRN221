@@ -1,0 +1,89 @@
+﻿<Window x:Class="SalesWPFApp.WindowMemberManagement"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SalesWPFApp"
+        mc:Ignorable="d"
+        BorderThickness="0" WindowStyle="None" BorderBrush="Black" ResizeMode="NoResize"
+        Title="Member Management" Height="689" Width="917" WindowState="Normal" WindowStartupLocation="CenterScreen" Background="Black">
+    <StackPanel Orientation="Vertical" Background="#a6d9ef" Margin="2,0,0,0" >
+        <Border CornerRadius="25" Margin="20,10,20,10" BorderBrush="Red" Background="White" Width="863" Height="661">
+            <StackPanel Orientation="Vertical">
+                <Label Content="Member Management" FontSize="25" HorizontalAlignment="Center" FontWeight="Bold" Margin="2,5,2,0" VerticalContentAlignment="Bottom"/>
+
+                <Grid Margin="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="4*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Width="838" Background="LightBlue" Margin="0,0,0,40" Grid.RowSpan="2">
+                        <Label Content="Member Id"/>
+                        <TextBox Name="txtMemberId" HorizontalAlignment="Stretch" Height="25"
+                        Text="{Binding Path=MemberId, Mode=OneWay}" 
+                        DataContext="{Binding ElementName=lvMember, Path=SelectedItem}"/>
+                        <Label Content="Email"/>
+                        <TextBox Name="txtEmail" HorizontalAlignment="Stretch" Height="25"
+                        Text="{Binding Path=Email, Mode=OneWay}"
+                        DataContext="{Binding ElementName=lvMember, Path=SelectedItem}"/>
+                        <Label Content="Company Name"/>
+                        <TextBox Name="txtCompanyName" HorizontalAlignment="Stretch" Height="25"
+                        Text="{Binding Path=CompanyName, Mode=OneWay}" 
+                        DataContext="{Binding ElementName=lvMember, Path=SelectedItem}"/>
+                        <Label Content="City"/>
+                        <TextBox Name="txtCity" HorizontalAlignment="Stretch" Height="25"
+                        Text="{Binding Path=City, Mode=OneWay}" 
+                        DataContext="{Binding ElementName=lvMember, Path=SelectedItem}"/>
+                        <Label Content="Country"/>
+                        <TextBox Name="txtCountry" HorizontalAlignment="Stretch" Height="25"
+                        Text="{Binding Path=Country, Mode=OneWay}" 
+                        DataContext="{Binding ElementName=lvMember, Path=SelectedItem}"/>
+                        <Label Content="Password"/>
+                        <TextBox Name="txtPassword" HorizontalAlignment="Stretch" Height="25"
+                        Text="{Binding Path=Password, Mode=OneWay}" 
+                        DataContext="{Binding ElementName=lvMember, Path=SelectedItem}"/>
+                        <Label Content="Role"/>
+                        <TextBox Name="txtRole" HorizontalAlignment="Stretch" Height="25"
+                        Text="{Binding Path=Role, Mode=OneWay}" 
+                        DataContext="{Binding ElementName=lvMember, Path=SelectedItem}"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,355,0,5">
+                        <Button Name="btnInsert" Content="Insert" Margin="10" Width="80" 
+                    Click="btnInsert_Click"/>
+                        <Button Name="btnUpdate" Content="Update" Margin="10" Width="80"
+                    Click="btnUpdate_Click"/>
+                        <Button Name="btnDelete" Content="Delete" Margin="10" Width="80"
+                    Click="btnDelete_Click"/>
+                    </StackPanel>
+
+                    <ListView Grid.Row="2" Name="lvMember" Width="auto" Height="auto">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Member Id" Width="90"
+                                    DisplayMemberBinding="{Binding Path=MemberId}"/>
+                                <GridViewColumn Header="Email" Width="150"
+                                    DisplayMemberBinding="{Binding Path=Email}"/>
+                                <GridViewColumn Header="Company Name" Width="150"
+                                    DisplayMemberBinding="{Binding Path=CompanyName}"/>
+                                <GridViewColumn Header="City" Width="100"
+                                    DisplayMemberBinding="{Binding Path=City}"/>
+                                <GridViewColumn Header="Country" Width="140"
+                                    DisplayMemberBinding="{Binding Path=Country}"/>
+                                <GridViewColumn Header="Password" Width="100"
+                                    DisplayMemberBinding="{Binding Path=Password}"/>
+                                <GridViewColumn Header="Role" Width="100"
+                                    DisplayMemberBinding="{Binding Path=Role}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+
+                    <Button Name="btnClose" Grid.Row="3" Margin="10" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="80" Content="Close" Click="btnClose_Click"/>
+                </Grid>
+            </StackPanel>
+        </Border>
+    </StackPanel>
+</Window>

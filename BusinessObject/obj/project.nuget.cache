@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "6NA2aerEk3YzzyAh/6RCTUhx69i594aO+nUzyayyPECyGUD4sxbTN13aiGufdYKVXal7Q6JRZf+RH0yXVLdLNg==",
+  "success": true,
+  "projectFilePath": "F:\\Ki 7\\C# Ki7\\Ass01Solution\\BusinessObject\\BusinessObject.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\hp\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\hp\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\hp\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
